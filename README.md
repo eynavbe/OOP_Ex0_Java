@@ -176,6 +176,6 @@ floorsSum () - Returns the total floors that the elevator has to go through acco
 
 
 ##Main UML:
-![1](https://user-images.githubusercontent.com/93534494/146743574-24685371-0ba3-4bb6-95a8-298d7d36eabb.png)
+![1](https://user-images.githubusercontent.com/93534494/146743750-d70013c1-67fd-4c1f-a07d-546c84e91a7f.jpg)
 
 
