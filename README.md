@@ -1,7 +1,7 @@
 # OOP_Ex0_Java
 
-##Literature Survey
-###Problem area:
+## Literature Survey
+### Problem area:
 In a building with several floors, there are m elevators. The elevators in the building are smart elevators, meaning a passenger chooses the floor he wants to reach while he is ordering the elevator.
 The most suitable elevator for passengers should be installed so that their average travel time (from the time of reading for the elevator to the time of getting out of it) will be minimal and extremely efficient.
 - What are smart elevators?
@@ -11,7 +11,7 @@ The most suitable elevator for passengers should be installed so that their aver
 - What to do if the two elevators are at the same distance from a passenger but one has passengers and the other is empty?
 - How to make sure that every elevator call is accepted? That is, how to make sure the program is online.
 
-###Requirements:
+### Requirements:
 - People click on which floor they want to go up / down when on the maximum floor you only have to go down and on the minimum floor you only have to go up.
 - As soon as a call to the elevator is received, the passenger should be placed in the most suitable elevator.
 - The elevator has a maximum and minimum floor and it cannot go up or down beyond these floors.
@@ -23,13 +23,13 @@ The most suitable elevator for passengers should be installed so that their aver
 - Each floor can have a number of passengers - the number of passengers is relevant only when there is one who wants to get on and the other to get off (because it is not necessary to take into account the lift load and the amount of passengers allowed).
 - When calling the elevator there are several options: 1) The elevator is on the requested floor. 2) The elevator above the requested floor. 3) The elevator below the requested floor.
 
-##3 similar works that deal with the optimization of elevators that seemed to us relevant to this task:
+## 3 similar works that deal with the optimization of elevators that seemed to us relevant to this task:
 1. https://www.geeksforgeeks.org/smart-elevator-pro-geek-cup/
 2. https://thinksoftware.medium.com/elevator-system-design-a-tricky-technical-interview-question-116f396f2b1c
 3. https://stackoverflow.com/questions/493276/modelling-an-elevator-using-object-oriented-analysis-and-design
 
-##Differences between algorithms and the wording of an "offline" algorithm
-###Differences between an online algorithm and an offline algorithm:
+## Differences between algorithms and the wording of an "offline" algorithm
+### Differences between an online algorithm and an offline algorithm:
 **Online algorithm:** constantly receives data from users, the program operates according to information received in real time and not according to pre-known data. In the online algorithm the program constantly adjusts itself.
 With us: The passengers' calls to the elevators are made all the time in real time, so the elevator must be prepared according to the calls. After each reading, a passenger rides to his optimal elevator according to the condition of the elevators at the current time.
 
@@ -38,7 +38,7 @@ With us: An offline elevator algorithm is an algorithm in which all elevator cal
 
 An offline algorithm makes it possible to build a more efficient plan because all the information is available to it in advance and therefore it will act according to it. An online algorithm will be less efficient because it can not predict the following actions of users and therefore may in the long run be less efficient, although it has many benefits such as real-time matching.
 
-###Offline algorithm for the problem of embedding elevator calls:
+### Offline algorithm for the problem of embedding elevator calls:
 All lifts are accepted in advance.
 We have n elevators.
 There will be a reading department that will include for each reading: reading floor, destination, direction (up / down), time - from entering the elevator to getting out of it does not include the stopping time on the way (can be calculated according to the number of floors to go).
@@ -58,7 +58,7 @@ A queue was built for each reading elevator installation.
 The queue will contain only the destination floor and the reading floor for the elevator, i.e. only the elevator stop points (int) in ascending order if passengers need to ascend and then in descending order if passengers need to descend.
 This is how each elevator goes according to the floors indicated in the queue until there are no organs (stop floors) left in the queue and then it will stop - rest.
 
-##"Online" Algorithm Formulation:
+## "Online" Algorithm Formulation:
 Elevator mode (f): Ascent, descent, and rest.
 The elevators will start the program on the ground floor.
 The person can click on an existing floor and not beyond.
@@ -130,14 +130,14 @@ INFOELEVATOR variable.
 That the person pressing the keypad will wait the least time until the elevator arrives or that the person will take the elevator ride in the least amount of time?
 The goal is to call the elevator from the source floor to the destination floor - the system will want to insert the elevator that will minimize the arrival time - the arrival time is set to be the time in seconds between the call to the elevator and the arrival to the destination floor. More generally it is said that given a collection of lifts calls on time we would like to define an elevator placement strategy for calls that will minimize the total arrival time for all calls.
 
-##Departments:
+## Departments:
 **Building**: the name of a building, the maximum number of floors in a building, the minimum number of floors in a building, the number of elevators in a building, the array of elevators (each place in the array symbolizes an elevator).
 **Elevator**: status (ascending and descending rest), current floor, door opening time, door closing time, stop time, movement start time, and speed, stop node list-
 **CallForElevator**: status (up or down), elevator assignment, reading source, destination, time the call was made, elevator location at the moment of assignment
 **PlaceTo**: Returns if there is the same origin and the same destination and their location. If there is not the same origin and destination returns where to place the call and destination, returns data for time calculation.
 **InfoElevator**: Includes the number of the elevator being inspected, the waiting time of the passenger, the time it takes to get in and out of the elevator, the number of priority of the elevator (according to the above details), where to place the departure and destination stops on the list.
 
-##The data interfaces:
+## The data interfaces:
 What each class performs according to the functions that are in the interface and the class implements:
 
 **In the Building interface:**
@@ -175,7 +175,7 @@ getStopTime () - returns the time in seconds it takes for the elevator to stop t
 floorsSum () - Returns the total floors that the elevator has to go through according to its list
 
 
-##Main UML:
+## Main UML:
 ![1](https://user-images.githubusercontent.com/93534494/146743750-d70013c1-67fd-4c1f-a07d-546c84e91a7f.jpg)
 
 
